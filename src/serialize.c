@@ -18,9 +18,11 @@
 
 #include <string.h>
 
-#ifdef __MINGW32__
-#define le32toh(x) (x)
-#define htole32(x) (x)
+#if defined(__APPLE__)
+#include <libkern/OSByteOrder.h>
+#include <machine/endian.h>
+#define htole32 OSSwapHostToLittleInt32
+#define le32toh OSSwapLittleToHostInt32
 #else
 #include <endian.h>
 #endif
