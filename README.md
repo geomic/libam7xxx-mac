@@ -57,13 +57,13 @@ Now for the tricky bit...
 
 Mac OS X will insist on seeing the projectos as a Mass Storage Device. In Linux, that's where you'd normally use sudo am7xxx-modeswitch but this isn't working for us (libusb/Mac OS issue here: http://www.libusb.org/ticket/89 - anyone willing to test the suggetions here: http://stackoverflow.com/questions/20253350/unable-to-claim-usb-interface-with-c-libusb-on-mac-os-x or here: http://www.draisberghof.de/usb_modeswitch/bb/viewtopic.php?p=209#209 ?).
 
-What you can do is the below:
-1) Install VirtualBox and a Ubuntu guest VM (e.g. 14.04)
-2) Install usb-modeswitch using: sudo apt-get update && sudo apt-get install usb-modeswitch
-3) Plug the projector (I tried C110) in VirtualBox go to "Devices", "USB Devices" and select "actions Usb Device [0100]". You may need to repeat this step until you see that "actions Usb Device [0100]" has a tick-box in front of it in "USB Devices".
-4) Then change the device mode by issuing: sudo usb_modeswitch   --default-vendor 0x1de1   --default-product 0x1101   --message-content 55534243087052890000000000000cff020000000000000000000000000000
-5) Go to the same menu on VirtualBox and click on the device again to de-select it this time. Make sure there is no tick-box, and you're done.
-6) You can now run am7xxx-play on the Mac! The device should have remained connected and recognised as a Generic Display Device instead.
+What you can do is the below:  
+1) Install VirtualBox and a Ubuntu guest VM (e.g. 14.04)  
+2) Install usb-modeswitch using: sudo apt-get update && sudo apt-get install usb-modeswitch  
+3) Plug the projector (I tried C110) in VirtualBox go to "Devices", "USB Devices" and select "actions Usb Device [0100]". You may need to repeat this step until you see that "actions Usb Device [0100]" has a tick-box in front of it in "USB Devices".  
+4) Then change the device mode by issuing: sudo usb_modeswitch   --default-vendor 0x1de1   --default-product 0x1101   --message-content 55534243087052890000000000000cff020000000000000000000000000000  
+5) Go to the same menu on VirtualBox and click on the device again to de-select it this time. Make sure there is no tick-box, and you're done.  
+6) You can now run am7xxx-play on the Mac! The device should have remained connected and recognised as a Generic Display Device instead.  
 
 I've also noticed that after the first time, the device seems to revert to Generic Display Device when it's mounted (twice) in the Ubuntu VM, which means all you have to do is mount-mount-unmount without needing to run usb_modeswitch again.
 
