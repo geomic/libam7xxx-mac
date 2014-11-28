@@ -9,42 +9,42 @@ awesome Antonio Ospite compile on Mac OS X Mavericks (possibly others).
 
 (Make sure you have homebrew installed on Mac OS X)
 
-brew install cmake
-brew install ffmpeg
-brew install doxygen
-brew install libusb
+brew install cmake  
+brew install ffmpeg  
+brew install doxygen  
+brew install libusb  
 
-wget http://xcb.freedesktop.org/dist/xcb-proto-1.10.tar.gz
-tar -zxvf xcb-proto-1.10.tar.gz
-cd xcb-proto-1.10
-./configure && make && sudo make install
+wget http://xcb.freedesktop.org/dist/xcb-proto-1.10.tar.gz  
+tar -zxvf xcb-proto-1.10.tar.gz  
+cd xcb-proto-1.10  
+./configure && make && sudo make install  
 
-wget http://xcb.freedesktop.org/dist/libpthread-stubs-0.3.tar.gz
-tar -zxvf libpthread-stubs-0.3.tar.gz
-cd libpthread-stubs-0.3
-./configure && make && sudo make install
+wget http://xcb.freedesktop.org/dist/libpthread-stubs-0.3.tar.gz  
+tar -zxvf libpthread-stubs-0.3.tar.gz  
+cd libpthread-stubs-0.3  
+./configure && make && sudo make install  
 
-wget http://xorg.freedesktop.org/releases/individual/proto/xproto-7.0.25.tar.bz2
-tar -zxvf xproto-7.0.25.tar.bz2
-cd xproto-7.0.25
-./configure && make && sudo make install
+wget http://xorg.freedesktop.org/releases/individual/proto/xproto-7.0.25.tar.bz2  
+tar -zxvf xproto-7.0.25.tar.bz2  
+cd xproto-7.0.25  
+./configure && make && sudo make install  
 
-wget http://xorg.freedesktop.org/releases/individual/lib/libXau-1.0.8.tar.bz2
-tar -zxvf libXau-1.0.8.tar.bz2
-cd libXau-1.0.8
-./configure && make && sudo make install
+wget http://xorg.freedesktop.org/releases/individual/lib/libXau-1.0.8.tar.bz2  
+tar -zxvf libXau-1.0.8.tar.bz2  
+cd libXau-1.0.8  
+./configure && make && sudo make install  
 
-wget http://cgit.freedesktop.org/xcb/libxcb/snapshot/libxcb-1.10.tar.gz
-tar -zxvf libxcb-1.10.tar.gz
-cd libxcb-1.10
-./configure && make && sudo make install
+wget http://cgit.freedesktop.org/xcb/libxcb/snapshot/libxcb-1.10.tar.gz  
+tar -zxvf libxcb-1.10.tar.gz  
+cd libxcb-1.10  
+./configure && make && sudo make install  
 
-git clone git@github.com:geomic/libam7xxx-mac.git
-cd libam7xxx
-mkdir build
-cd build
-cmake ../
-make
+git clone git@github.com:geomic/libam7xxx-mac.git  
+cd libam7xxx  
+mkdir build  
+cd build  
+cmake ../  
+make  
 
 You will get 4 warnings... but it should all work and get you to 100%.
 
